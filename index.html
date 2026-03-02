@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Badrul Huda Madrasa Result</title>
+<link rel="stylesheet" href="mad.css">
+<link href="https://fonts.googleapis.com/css2?family=Saira:wght@600;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="card">
+
+<div class="header">
+<h1>Badrul Huda Madrasa</h1>
+<p>Annual Examination Result - 2026</p>
+</div>
+
+<div class="body">
+
+<!-- FORM SECTION -->
+<div id="formSection">
+
+<label>Register Number</label>
+<input type="text" id="regNo">
+
+<label>Class</label>
+<select id="class">
+<option value="" disabled selected>Select Class</option>
+<option value="1">Class 1</option>
+<option value="2">Class 2</option>
+<option value="3">Class 3</option>
+<option value="4">Class 4</option>
+<option value="6">Class 6</option>
+<option value="8">Class 8</option>
+<option value="9">Class 9</option>
+</select>
+
+<button onclick="checkResult()">Check Result</button>
+
+<div id="loading" class="loading">
+<div class="spinner"></div>
+Fetching Result...
+</div>
+
+</div>
+
+<!-- RESULT SECTION -->
+<div id="resultSection" style="display:none;">
+
+<table class="info-table">
+<tr><td>Name</td><td id="name"></td></tr>
+<tr><td>RegNo</td><td id="reg"></td></tr>
+<tr><td>Class</td><td id="cls"></td></tr>
+</table>
+
+<table>
+<tr>
+<th>Subject Name</th>
+<th>Mark</th>
+</tr>
+<tbody id="subjects"></tbody>
+<tr><td><strong>Total</strong></td><td id="total"></td></tr>
+<tr><td><strong>Average</strong></td><td id="average"></td></tr>
+<tr><td><strong>Grade</strong></td><td id="grade"></td></tr>
+</table>
+
+<div id="status" class="status"></div>
+
+<button onclick="window.print()">Print Result</button>
+<button onclick="goBack()">Check another result</button>
+
+</div>
+
+</div>
+</div>
+
+<script src="madu.js"></script>
+</body>
+</html>
