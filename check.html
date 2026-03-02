@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Check Result - Badrul Huda Madrasa</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Saira:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+--bg:#348a8a;
+--dark:#003d3d;
+--white:#ffffff;
+--input:#f2f2f2;
+}
+
+body{
+margin:0;
+background:var(--bg);
+font-family:'Inter',sans-serif;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+padding:15px;
+}
+
+.card{
+background:var(--white);
+width:100%;
+max-width:360px;
+border-radius:25px;
+overflow:hidden;
+box-shadow:0 15px 35px rgba(0,0,0,0.2);
+}
+
+.header{
+background:var(--dark);
+color:white;
+text-align:center;
+padding:25px 15px;
+}
+
+.header h1{
+font-family:'Saira',sans-serif;
+margin:0;
+font-size:1.2rem;
+text-transform:uppercase;
+}
+
+.header p{
+margin:5px 0 0;
+font-size:0.85rem;
+}
+
+.form-body{
+padding:25px;
+}
+
+label{
+font-weight:500;
+font-size:0.9rem;
+}
+
+input,select{
+width:100%;
+padding:12px;
+margin-top:6px;
+margin-bottom:18px;
+border-radius:8px;
+border:1px solid #ccc;
+background:var(--input);
+font-size:1rem;
+box-sizing:border-box;
+}
+
+button{
+width:100%;
+padding:14px;
+border:none;
+border-radius:8px;
+background:var(--dark);
+color:white;
+font-weight:600;
+font-size:1rem;
+cursor:pointer;
+}
+
+.loading{
+display:none;
+text-align:center;
+margin-top:15px;
+}
+
+.spinner{
+border:4px solid #f3f3f3;
+border-top:4px solid var(--dark);
+border-radius:50%;
+width:30px;
+height:30px;
+animation:spin 1s linear infinite;
+margin:10px auto;
+}
+
+@keyframes spin{
+0%{transform:rotate(0deg);}
+100%{transform:rotate(360deg);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+<div class="header">
+<h1>Badrul Huda Madrasa</h1>
+<p>Annual Examination Result - 2026</p>
+</div>
+
+<div class="form-body">
+
+<label>Register Number</label>
+<input type="text" id="regNo">
+
+<label>Class</label>
+<select id="class">
+<option value="" disabled selected>Select Class</option>
+<option value="1">Class 1</option>
+<option value="2">Class 2</option>
+<option value="3">Class 3</option>
+<option value="4">Class 4</option>
+<option value="6">Class 6</option>
+</select>
+
+<button onclick="goToResult()">Check Result</button>
+
+<div class="loading" id="loading">
+<div class="spinner"></div>
+<div>Please wait...</div>
+</div>
+
+</div>
+</div>
+
+<script>
+function goToResult(){
+let reg=document.getElementById("regNo").value.trim();
+let cls=document.getElementById("class").value;
+
+if(reg===""||cls===""){
+alert("Please enter RegNo and Class");
+return;
+}
+
+document.getElementById("loading").style.display="block";
+
+setTimeout(()=>{
+window.location.href=`result.html?regNo=${reg}&class=${cls}`;
+},700);
+}
+</script>
+
+</body>
+</html>
