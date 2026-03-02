@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Result</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Saira:wght@600;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styl.css">
+</head>
+
+<body>
+
+<div class="card">
+
+<div class="header">
+<h1>Badrul Huda Madrasa</h1>
+<p>Annual Examination Result - 2026</p>
+</div>
+
+<div class="content">
+
+<div id="loading" class="loading">
+<div class="spinner"></div>
+Fetching Result...
+</div>
+
+<div id="resultContent" style="display:none;">
+
+<table>
+<tr><td>Name</td><td id="name"></td></tr>
+<tr><td>RegNo</td><td id="reg"></td></tr>
+<tr><td>Class</td><td id="cls"></td></tr>
+</table>
+
+<table>
+<tr>
+<th>Subject</th>
+<th>Mark</th>
+</tr>
+<tbody id="subjects"></tbody>
+<tr><td>Total</td><td id="total"></td></tr>
+<tr><td>Average</td><td id="average"></td></tr>
+<tr><td>Grade</td><td id="grade"></td></tr>
+</table>
+
+<div id="status" class="status"></div>
+
+<button onclick="window.print()">Print Result</button>
+
+</div>
+
+</div>
+</div>
+
+<script src="result.js"></script>
+</body>
+</html>
