@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Al Huda Madrasa - Result</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="mad.css">
+</head>
+<body>
+
+<div class="container">
+
+  <!-- FORM PAGE -->
+  <div id="formPage">
+    <h2>Badrul Huda Madrasa</h2>
+    <p>Annual Examinatio-2026</p>
+
+    <input type="number" id="regNo" placeholder="Enter Register Number">
+
+    <select id="class">
+      <option value="1A">1</option>
+      <option value="1B">2</option>
+      <option value="3A">3</option>
+      <option value="2A">6</option>
+      <option value="2A">8</option>
+    </select>
+
+    <button onclick="checkResult()">Check Result</button>
+  </div>
+
+  <!-- RESULT PAGE -->
+  <div id="resultPage" style="display:none;">
+    <div class="marksheet">
+
+      <h3>Annual Examination - 2026</h3>
+
+      <div class="student-info">
+        <p><strong>Name:</strong> <span id="name"></span></p>
+        <p><strong>Reg No:</strong> <span id="reg"></span></p>
+        <p><strong>Class:</strong> <span id="cls"></span></p>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Subjects</th>
+            <th>Mark Obtained</th>
+          </tr>
+        </thead>
+        <tbody id="marksTable">
+        </tbody>
+      </table>
+
+      <div class="summary">
+        <p><strong>Total:</strong> <span id="total"></span></p>
+        <p><strong>Average:</strong> <span id="average"></span></p>
+        <p><strong>Grade:</strong> <span id="grade"></span></p>
+        <p><strong>Status:</strong> <span id="status"></span></p>
+      </div>
+
+      <button onclick="window.print()" class="print-btn">Print</button>
+
+    </div>
+  </div>
+
+</div>
+
+<script src="madu.js"></script>
+</body>
+</html>
